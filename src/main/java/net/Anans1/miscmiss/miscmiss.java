@@ -1,18 +1,16 @@
 package net.Anans1.miscmiss;
 
 import com.mojang.logging.LogUtils;
-import net.Anans1.miscmiss.missiles.entity.homingMissile;
-import net.minecraft.world.item.Item;
+import net.Anans1.miscmiss.entityInit.EntityInit;
+import net.Anans1.miscmiss.entityInit.MissileEntity;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
-import java.util.stream.Collectors;
-
 import static net.Anans1.miscmiss.miscmiss.MODID;
+import static net.minecraftforge.common.MinecraftForge.EVENT_BUS;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(MODID)
@@ -28,7 +26,9 @@ public class miscmiss
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 
         // Register ourselves for server and other game events we are interested in
-        MinecraftForge.EVENT_BUS.register(this);
+        EVENT_BUS.register(this);
+
+        EntityInit.ENTITY_TYPES.register(EVENT_BUS);
 
 
     }
