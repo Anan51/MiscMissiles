@@ -2,7 +2,6 @@ package net.Anans1.miscmiss;
 
 import com.mojang.logging.LogUtils;
 import net.Anans1.miscmiss.entityInit.EntityInit;
-import net.Anans1.miscmiss.entityInit.MissileEntity;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -17,7 +16,7 @@ import static net.minecraftforge.common.MinecraftForge.EVENT_BUS;
 public class miscmiss
 {
     // Directly reference a slf4j logger
-    public static final String MODID = "miscmiss";
+    public static final String MODID = "assets";
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public miscmiss()
