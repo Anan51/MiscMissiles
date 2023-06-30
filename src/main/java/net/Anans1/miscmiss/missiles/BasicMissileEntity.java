@@ -34,12 +34,14 @@ public class BasicMissileEntity extends AbstractArrow {
         super.onHitEntity(ray);
         // this, x, y, z, explosionStrength, setsFires, breakMode
         this.level.explode(this, this.getX(), this.getY(), this.getZ(), 4.0f, true, Explosion.BlockInteraction.BREAK);
+        this.discard();
     }
     @Override
     protected void onHitBlock(BlockHitResult ray) {
         super.onHitBlock(ray);
         BlockState theBlockYouHit = this.level.getBlockState(ray.getBlockPos());
         this.level.explode(this, this.getX(), this.getY(), this.getZ(), 4.0f, true, Explosion.BlockInteraction.BREAK);
+        this.discard();
     }
 
     @Override
