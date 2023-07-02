@@ -1,6 +1,9 @@
 package net.Anans1.miscmiss;
 
 import com.mojang.logging.LogUtils;
+import net.Anans1.miscmiss.client.ClientSetup;
+import net.Anans1.miscmiss.client.render.BasicMissileRenderer;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
@@ -10,6 +13,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import software.bernie.geckolib3.GeckoLib;
 
 import static net.Anans1.miscmiss.ItemInit.TEST;
 import static net.Anans1.miscmiss.miscmiss.MODID;
@@ -42,17 +46,21 @@ public class miscmiss
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         modEventBus.addListener(this::setup);
-        ItemInit.ITEMS.register(modEventBus);
 
-        MinecraftForge.EVENT_BUS.register(this);
+
+
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 
         // Register ourselves for server and other game events we are interested in
         EVENT_BUS.register(this);
+        ItemInit.ITEMS.register(modEventBus);
+        BlockInit.BLOCKS.register(modEventBus);
         EntityInit.ENTITY_TYPES.register(modEventBus);
 
+        MinecraftForge.EVENT_BUS.register(this);
+        GeckoLib.initialize();
 
     }
 

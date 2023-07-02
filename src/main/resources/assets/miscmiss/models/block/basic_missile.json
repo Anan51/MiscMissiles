@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "miscmiss:item/basic_missile"
+    "layer0": "miscmiss:block/basic_missile"
   }
 }
