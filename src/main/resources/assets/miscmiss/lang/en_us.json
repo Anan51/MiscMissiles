@@ -3,7 +3,6 @@
 
   "item.miscmiss.basic_missile": "Booster Missile",
 
-  "item.miscmiss.test": "Test Item",
+  "item.miscmiss.potion_missile": "Potion Missile",
 
-  "block.miscmiss.test_block": "Test Block"
 }

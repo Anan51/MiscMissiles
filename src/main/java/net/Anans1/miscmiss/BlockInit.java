@@ -20,12 +20,6 @@ import static net.Anans1.miscmiss.miscmiss.MODID;
 public class BlockInit {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
 
-    public static final RegistryObject<Block> TEST_BLOCK = BLOCKS.register("test_block",
-            () -> new Block(Block.Properties.of(Material.STONE).strength(4f, 1200f).requiresCorrectToolForDrops().lightLevel((state) -> 15)));
-
-    //static final RegistryObject<Block> MISSILE_LAUNCHER = BLOCKS.register("missile_launcher",
-    //        () -> new MissileLauncher(Block.Properties.copy(Blocks.DEEPSLATE_BRICKS)));
-
     @SubscribeEvent
     public static void onRegisterItems(final RegistryEvent.Register<Item> event) {
         final IForgeRegistry<Item> registry = event.getRegistry();

@@ -2,6 +2,8 @@ package net.Anans1.miscmiss.client;
 
 import net.Anans1.miscmiss.EntityInit;
 import net.Anans1.miscmiss.client.render.BasicMissileRenderer;
+import net.Anans1.miscmiss.client.render.NukeRenderer;
+import net.Anans1.miscmiss.client.render.PotionMissileRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -15,5 +17,7 @@ public class ClientSetup {
     @SubscribeEvent
     public static void doSetup(FMLClientSetupEvent event) {
         EntityRenderers.register(EntityInit.BASIC_MISSILE.get(), BasicMissileRenderer::new);
+        EntityRenderers.register(EntityInit.POTION_MISSILE.get(), PotionMissileRenderer::new);
+        EntityRenderers.register(EntityInit.NUKE_MISSILE.get(), NukeRenderer::new);
     }
 }

@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "miscmiss:basic_missile",
+    "miscmiss:potion_missile",
+    "miscmiss:nuke_missile"
+  ]
+}

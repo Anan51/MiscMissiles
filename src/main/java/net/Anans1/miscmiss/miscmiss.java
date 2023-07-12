@@ -1,9 +1,8 @@
 package net.Anans1.miscmiss;
 
 import com.mojang.logging.LogUtils;
-import net.Anans1.miscmiss.client.ClientSetup;
 import net.Anans1.miscmiss.client.render.BasicMissileRenderer;
-import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.Anans1.miscmiss.missiles.BasicMissileItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
@@ -15,7 +14,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import software.bernie.geckolib3.GeckoLib;
 
-import static net.Anans1.miscmiss.ItemInit.TEST;
 import static net.Anans1.miscmiss.miscmiss.MODID;
 import static net.minecraftforge.common.MinecraftForge.EVENT_BUS;
 
@@ -33,7 +31,7 @@ public class miscmiss
 
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(TEST.get());
+            return new ItemStack(Blocks.REDSTONE_BLOCK);
         }
         public static final ModCreativeTab instance = new ModCreativeTab(CreativeModeTab.TABS.length, "miscmiss");
 
